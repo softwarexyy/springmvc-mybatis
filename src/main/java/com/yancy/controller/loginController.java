@@ -12,7 +12,7 @@ import com.yancy.mapper.UserMapper;
 import com.yancy.util.SqlSessionFactoryUtil;
 
 /**
- * ¿ØÖÆÆ÷Àà
+ * æ§åˆ¶å™¨ç±»
  * 
  * @author yancy
  *
@@ -22,22 +22,22 @@ import com.yancy.util.SqlSessionFactoryUtil;
 public class loginController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ModelAndView hello(User model) {
-		System.out.println(" ============ SpringMVC-helloÒÑ³É¹¦ÔËĞĞ =========== ");
+		System.out.println(" ============ SpringMVC-helloå¼€å§‹è¿è¡Œ =========== ");
 
-		System.out.println(" ============ ¿ªÊ¼³õÊ¼»¯mybatis£º =========== ");
+		System.out.println(" ============ mybatisåˆå§‹åŒ–sqlSession =========== ");
 		SqlSession sqlSession = null;
 		sqlSession = SqlSessionFactoryUtil.openSqlSession();
 		UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
 
 		String username = model.getName();
 		String password = model.getPasswd();
-		System.out.println("----- ´«ÈëµÄ²ÎÊı ----" + username + password);
+		System.out.println("----- å‰ç«¯é¡µé¢ä¼ å…¥çš„æ•°æ®ï¼š ----" + username + password);
 		User user = userMapper.getUserByName(username);
-		System.out.println("----- ²éÑ¯µÄÃÜÂë ----" + user.getName() + user.getPasswd());
-		sqlSession.close();// ¹Ø±ÕsqlSession
-		// ÑéÖ¤ÃÜÂëÊÇ·ñÕıÈ·
+		System.out.println("----- ä»æ•°æ®åº“è¯»å–çš„æ•°æ®ï¼š ----" + user.getName() + user.getPasswd());
+		sqlSession.close();// å…³é—­sqlSession
+		// éªŒè¯ç™»å½•å¯†ç æ˜¯å¦æ­£ç¡®
 		if (password.equals(user.getPasswd())) {
-			ModelAndView mv = new ModelAndView("homePage");// Ö¸¶¨ÊÓÍ¼
+			ModelAndView mv = new ModelAndView("homePage");// Ö¸ï¿½ï¿½ï¿½ï¿½Í¼
 			System.out.println("======== homepage ========");
 			return mv;
 		} else {
@@ -48,10 +48,10 @@ public class loginController {
 	@RequestMapping("/hello2")
 	public ModelAndView showMessage(
 			@RequestParam(value = "name", required = false, defaultValue = "Spring") String name) {
-		ModelAndView mv = new ModelAndView("hello");// Ö¸¶¨ÊÓÍ¼
-		// ÏòÊÓÍ¼ÖĞÌí¼ÓËùÒªÕ¹Ê¾»òÊ¹ÓÃµÄÄÚÈİ£¬½«ÔÚÒ³ÃæÖĞÊ¹ÓÃ
+		ModelAndView mv = new ModelAndView("hello");// Ö¸ï¿½ï¿½ï¿½ï¿½Í¼
+		// ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÒªÕ¹Ê¾ï¿½ï¿½Ê¹ï¿½Ãµï¿½ï¿½ï¿½ï¿½İ£ï¿½ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½
 		mv.addObject("name", name);
-		System.out.println(" ============ SpringMVC-hello2ÒÑ³É¹¦ÔËĞĞ =========== ");
+		System.out.println(" ============ SpringMVC-hello2ï¿½Ñ³É¹ï¿½ï¿½ï¿½ï¿½ï¿½ =========== ");
 		return mv;
 	}
 
