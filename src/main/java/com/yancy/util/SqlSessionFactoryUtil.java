@@ -1,6 +1,3 @@
-/**
- * mybatisÖúÊÖÀà
- */
 package com.yancy.util;
 
 import java.io.IOException;
@@ -14,7 +11,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.Priority;
 
 /**
- * mybatisÖúÊÖÀà£¬µ¥ÀıÄ£Ê½
+ * mybatiså·¥å…·ç±»
  * @author yancy
  *
  */
@@ -23,7 +20,7 @@ public class SqlSessionFactoryUtil {
 	private static final Class CLASS_LOCK=SqlSessionFactoryUtil.class;
 	
 	private SqlSessionFactoryUtil() {
-		//ÊµÏÖµ¥ÀıÄ£Ê½
+		//ç§æœ‰åŒ–æ„é€ æ–¹æ³•
 	}
 	public static SqlSessionFactory initSqlSessionFactory() {
 		String resource = "mybatis-config.xml";

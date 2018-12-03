@@ -7,7 +7,7 @@ import com.yancy.entity.User;
 import com.yancy.util.SqlSessionFactoryUtil;
 
 /**
- * 测试类，验证mybatis
+ * 娴嬭瘯mybatis
  * 
  * @author yancy
  *
@@ -19,13 +19,12 @@ public class Test {
 		sqlSession = SqlSessionFactoryUtil.openSqlSession();
 		UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
 
-		// 测试getUser方法
+		// 娴嬭瘯getUser鏂规硶
 		User user = userMapper.getUser((int) 2);
 		System.out.println("-------> test getUser: " + user + " <----------");
 
-		// 测试addUser方法
+		// 娴嬭瘯addUser鏂规硶
 		User userToAdd = new User();
-		// TODO:随机生成一个ID
 		userToAdd.setId(3); // ID
 		userToAdd.setName("yancy");
 		userToAdd.setPasswd("123");
@@ -33,7 +32,7 @@ public class Test {
 		System.out.println("-------> test addUser: " + userToAdd + " <----------");
 		sqlSession.commit();
 
-		// 测试deleteUser方法
+		// 娴嬭瘯deleteUser鏂规硶
 		userMapper.deleteUser(3);
 		System.out.println("-------> test deleteUser <----------");
 		sqlSession.commit();
