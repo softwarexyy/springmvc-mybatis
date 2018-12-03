@@ -3,7 +3,7 @@ package com.yancy.mapper;
 import com.yancy.entity.User;
 
 /**
- * 对User增删改查的接口
+ * 鏁版嵁搴撴搷浣滅殑鎺ュ彛
  * @author yancy
  *
  */
