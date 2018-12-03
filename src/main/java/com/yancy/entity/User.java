@@ -1,7 +1,7 @@
 package com.yancy.entity;
 
 /**
- * ÊµÌåÀà£¬ÓÃ»§
+ * å®ä½“ç±»
  * @author yancy
  *
  */
