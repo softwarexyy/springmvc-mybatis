@@ -37,7 +37,7 @@ public class loginController {
 		sqlSession.close();// 关闭sqlSession
 		// 验证登录密码是否正确
 		if (password.equals(user.getPasswd())) {
-			ModelAndView mv = new ModelAndView("homePage");// ָ����ͼ
+			ModelAndView mv = new ModelAndView("homePage");	//返回到homePage页面
 			System.out.println("======== homepage ========");
 			return mv;
 		} else {
@@ -48,10 +48,10 @@ public class loginController {
 	@RequestMapping("/hello2")
 	public ModelAndView showMessage(
 			@RequestParam(value = "name", required = false, defaultValue = "Spring") String name) {
-		ModelAndView mv = new ModelAndView("hello");// ָ����ͼ
-		// ����ͼ�������Ҫչʾ��ʹ�õ����ݣ�����ҳ����ʹ��
+		ModelAndView mv = new ModelAndView("hello");
+		// 为页面加上name属性值
 		mv.addObject("name", name);
-		System.out.println(" ============ SpringMVC-hello2�ѳɹ����� =========== ");
+		System.out.println(" ============ SpringMVC-hello2运行成功 =========== ");
 		return mv;
 	}
 
